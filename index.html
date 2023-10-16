@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Club Euphoria Menu</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Additional styles specific to this menu page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Remove the background color from the header */
+        header {
+            background-color: transparent;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        /* Center-align the typing effect and make it transparent */
+        #typing-effect {
+            font-size: 30px;
+            margin-top: 50px;
+            text-align: center;
+            font-style: italic;
+            opacity: 0.8;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 20px;
+            color: #91248f;
+        }
+        section {
+            text-align: center;
+            margin: 20px;
+        }
+
+        section h2 {
+            color: white;
+        }
+
+        .menu-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Set the max width of the menu item image to 100% for responsiveness */
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .menu-item h2 {
+            color: #91248f;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .menu-item p {
+            color: #5c157e;
+        }
+
+        .add-to-cart-btn {
+            background-color: #91248f;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-weight: bold;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #5c157e;
+        }
+
+        footer {
+            background-color: #91248f;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .menu-item {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-item {
+                width: 100%;
+            }
+        }
+
+        /* Add styles for responsive design */
+        .brandy-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brandy-section h3 {
+            width: 100%;
+        }
+
+        .brandy-content {
+            flex: 1;
+        }
+
+        .brandy-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .brandy-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brandy-content {
+                text-align: left;
+            }
+        }
+
+        /* Add styles for the dropdown menu */
+.search-bar select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/* Style the "Go" button */
+#go-to-section-btn {
+    background-color: #91248f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#go-to-section-btn:hover {
+    background-color: #5c157e;
+}
+
+
+
+        /* Add styles for the brandy section */
+.brandy-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.brandy-section h3 {
+    width: 100%;
+}
+
+/* Center-align the content and left-align the text for better readability */
+.brandy-content {
+    flex: 1;
+    text-align: center;
+}
+
+.brandy-content p {
+    text-align: left;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .brandy-section {
+        flex-direction: column;
+    }
+
+    /* Center-align the text on smaller screens */
+    .brandy-content p {
+        text-align: center;
+        color: white;
+    }
+}
+
+/* Style for the video background */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.white-text {
+    color: white;
+}
+
+/* Add styles for the "ENDPART" section */
+#ng-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#ng-section h3 {
+    width: 100%;
+}
+
+/* Center-align the content and set the image width to match "best" section */
+#ng-section .brandy-content {
+    flex: 1;
+    text-align: center;
+}
+
+#ng-section .brandy-content img {
+    max-width: 100%; /* Set the maximum width to 100% for responsiveness */
+    height: auto;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="clubvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+<!-- Inside the <header> element -->
+    <header>
+        <div id="typing-effect" class="green-text"></div>
+        <nav>
+            <!-- Replace the search bar with the dropdown menu -->
+            <div class="search-bar">
+                <select id="section-dropdown">
+                    <option value="" disabled selected>Select a Section</option>
+                    <option value="cog-section">Brandy/Cognac</option>
+                    <option value="gin2-section">GIN</option>
+                    <option value="rum-section">RUM</option>
+                    <option value="cha-section">CHAMPAGNE</option>
+                    <option value="red-section">RED/WHITE WINE:</option>
+                    <option value="spa-section">SPARKLING WINES:</option>
+                    <option value="ste-section">TEQUILA:</option>
+                    <option value="ape-section">APERITIF/LIQUEUR:</option>
+                    <option value="vod-section">VODKA:</option>
+
+
+                    <!-- Add more options for other sections as needed -->
+                </select>
+                <button id="go-to-section-btn">Go</button>
+            </div>
+        </nav>
+    </header>
+
+<section id="menu">
+    <h2>CHAMPAGNE:</h2>
+
+    <!-- Brandy/Cognac Section -->
+<div class="cha-section" id="cha-section">
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/lou.png" alt="Brandy/Cognac">
+
+        <!-- Brandy/Cognac Drink List -->
+        <p> Crystals - ₦450,000<br> Ace Of Spades - ₦450,000<br> Domperignon - ₦350,000<br> Moet Ice - ₦120,000<br> Moet Rose - ₦100,000<br> Moet Brut - ₦90,000<br> Moet Imperial - ₦90,000<br> Veuve Clicquot - ₦90,000<br> </p>
+    </div>
+    </div>
+</div>
+
+
+<section id="menu">
+    <h2>AZNAURI</h2>
+
+    <!-- Brandy/Cognac Section -->
+<div class="coganc-section" id="azn-section">
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/love.png" alt="Brandy/Cognac">
+
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+         
+        </p>
+    </div>
+</div>
+
+<section id="menu">
+    <h2>Scotch& Bourbon Whiskey</h2>
+
+    <!-- Brandy/Cognac Section -->
+<div class="coganc-section" id="azn-section">
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/whiskey.png" alt="Brandy/Cognac">
+
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+         Glenfiddich 23yrs - ₦500,000<br>
+         Glenfiddich 22yrs - ₦<br>
+         Glenfiddich 21yrs - ₦<br>
+         Glenfiddich 18yrs - ₦100,000<br>
+         Glenfiddich 15yrs - ₦75,000<br>
+         Glenfiddich 12yrs - ₦50,000<br>
+         Glenmorangie Signet - ₦250,000<br>
+         Chivas Regal 18yrs - ₦80,000 <br>
+         Chivas Regal 15yrs - ₦45,000<br>
+         Chivas Regal 12yrs - ₦40,000<br>
+         Singleton 18yrs - ₦150,000<br>
+         Singleton 15yrs - ₦80,000<br>
+         Singleton 12yrs - ₦45,000<br>
+         Johnnie Walker Blue Label - ₦300,000<br>
+         Johnnie Walker Platinum Label - ₦100,000 <br>
+         Johnnie Walker Gold Label - ₦70,000<br>
+         Johnnie Walker Black Label - ₦40,000<br>
+         Monkey Shoulder - ₦40,000<br>
+         Tenjuki - ₦40,000<br>
+         Jack Daniels Single Barrel - ₦60,000<br>
+         Jack Daniels - ₦40,000<br>
+         Jameson Black Barrel - ₦45,000<br>
+         Jameson Green - ₦35,000<br>
+         Glenlivet Founders Reserve - ₦35,000<br>
+         Macallan Estate - ₦350,000<br>
+         Macallan Rare Cask - ₦300,000<br>
+         Macallan 18yrs - ₦250,000<br>
+         Macallan 15yrs - ₦130,000<br>
+         Macallan 12yrs - ₦60,000<br>
+         Grants - ₦<br>
+        </p>
+    </div>
+</div>
+<section id="menu">
+    <h2>Brandy/Cognac:</h2>
+
+    <!-- Brandy/Cognac Section -->
+    <section id="rum-section">
+        <div class="brandy-content">
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/lop.png" alt="Brandy/Cognac">
+
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+            Hennessy XO - ₦380,000<br>
+            Hennessy VSOP - ₦95,000<br>
+            Hennessy VS - ₦60,000<br>
+            Remy Martin XO - ₦350,000<br>
+            Remy Martin 1738 VSOP - ₦110,000<br>
+            Remy Martin VSOP - ₦80,000<br>
+            Martell XO - ₦350,000<br>
+            Martell Blue Swift - ₦90,000<br>
+            Martell VSSD - ₦80,000<br>
+        </p>
+    </div>
+</div>
+<div class="brandy-section" id="spa-section">
+    <h3 class="white-text">SPARKLING WINES:</h3>
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/wine2.png" alt="Brandy/Cognac">
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+            Andre Brut - ₦450,000<br>
+            Andre Rose - ₦450,000<br>
+            Bellaire Brut - ₦350,000<br>
+            Bellaire Rose - ₦90,000<br>
+            Martini Rose - ₦90,000<br>
+        </p>
+        
+    </div>
+</div>
+</section>
+<div class="brandy-section" id="red-section">
+    <h3 class="white-text">RED/WHITE WINE:</h3>
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/wine619.png" alt="Brandy/Cognac">
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+            Mouton Cade - ₦450,000<br>
+            Escudo Rojo - ₦350,000<br>
+            Thomas Barton - ₦90,000<br>
+            Sweet Lips - ₦90,000<br>
+            Drostdy Hof - ₦90,000<br>
+            Four Cousins - ₦90,000<br>
+            Kagor - ₦90,000<br>
+            Agor - ₦90,000<br>
+            Caheunuf du pape - 35,000<br>
+        </p>
+    </div>
+</div>
+</section>
+<div class="brandy-section" id="vod-section">
+    <h3 class="white-text">VODKA:</h3>
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/7.png" alt="Brandy/Cognac">
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+            Belvedere - ₦60,000<br>
+            Cîroc Blue - ₦60,000<br>
+            Grey Goose - ₦50,000<br>
+            Sky Vodka - ₦35,000<br>
+            Absolut Vodka - ₦35,000<br>
+            Smirnoff Vodka - ₦35,000<br>
+            Absolut Vodka - ₦35,000 <br>
+        </p>
+        
+    </div>
+</div>
+</section>
+<div class="brandy-section" id="ste-section">
+    <h3 class="white-text">TEQUILA:</h3>
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/don.png" alt="Brandy/Cognac">
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+        Don Julio - ₦450,000<br>
+        Azul - ₦400,000<br>
+        Olmeca Tequila Blanco - ₦40,000<br>
+        Olmeca Tequila Gold - ₦40,000<br>
+        Sierra Tequila - ₦30,000<br>
+        Camino Tequila - ₦30,000<br>
+        Casa Maestri Tequila - ₦<br>
+        </p>
+        
+    </div>
+</div>
+</section>
+<div class="brandy-section" id="ape-section">
+    <h3 class="white-text">APERITIF/LIQUEUR:</h3>
+    <h3 class="white-text"></h3>
+    <div class="brandy-content">
+        <img src="images/car.png" alt="Brandy/Cognac">
+        <!-- Brandy/Cognac Drink List -->
+        <p>
+            Baileys - ₦30,000<br>
+            Tia Maria - ₦30,000<br>
+            Grand Marnier - ₦30,000<br>
+            Kahlúa - ₦30,000<br>
+            Jagermeister - ₦<br>
+            Campari - ₦20,000<br>
+            Pampelle - ₦20,000<br>
+        </p>
+        
+    </div>
+</div>
+</section>
+
+</body>
+</html>
+<!-- At the end of your HTML body, before the closing </body> tag -->
+<script>
+    // Function to handle the "Go" button click to navigate to the selected section
+    document.getElementById('go-to-section-btn').addEventListener('click', function () {
+    var selectedSection = document.getElementById('section-dropdown').value;
+    if (selectedSection) {
+        window.location.href = '#' + selectedSection;
+    }
+});
+
+  </script>
+  
+  <script>
+      const typingEffectElement = document.getElementById("typing-effect");
+      const message = "Club Euphoria Digital Menu.";
+      let index = 0;
+  
+      function typeMessage() {
+          typingEffectElement.textContent += message[index];
+          index++;
+  
+          if (index < message.length) {
+              setTimeout(typeMessage, 50); // Adjust typing speed here (milliseconds)
+          }
+      }
+  
+      typeMessage();
+  </script>
